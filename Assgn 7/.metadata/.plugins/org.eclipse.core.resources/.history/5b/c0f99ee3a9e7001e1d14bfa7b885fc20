@@ -1,0 +1,33 @@
+package com.example;
+
+public class Sorting {
+		public static void main(String[] args) {
+			int[] arr = {24,54,31,16,82,45,67};
+			
+			
+			int max = arr[0];
+			
+			for (int i = 0 ; i < arr.length;i++) {
+				 if(arr[i] > max) {
+					max = arr[i];
+					
+				}
+				 int max1 = arr[0];
+				 for (int j = 0 ; i < arr.length;j++) {
+					 if(arr[i] > max) {
+						max1 = arr[i] - 1;
+			}
+					 int max2 = arr[0];
+					 for (int k = 0 ; i < arr.length;k++) {
+						 if(arr[i] > max) {
+							max2 = arr[i]- 2;
+						 }
+			
+			
+			System.out.print( + max2 + "("+ max + "and" + max1 + "are the largest and second-largest" );
+		}
+
+	}
+}
+			}
+}

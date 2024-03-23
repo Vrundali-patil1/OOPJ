@@ -1,0 +1,36 @@
+package com.example;
+
+import java.util.*;
+
+public class Sum {
+    public static void findPairs(int[] arr, int targetSum) {
+        Set<Integer> seen = new HashSet<>();
+        Set<Integer> resultSet = new HashSet<>();
+
+        for (int num : arr) {
+            int complement = targetSum - num;
+            if (seen.contains(complement)) {
+                resultSet.add(Math.min(num, complement));
+                resultSet.add(Math.max(num, complement));
+            }
+            seen.add(num);
+        }
+
+        // Print pairs
+        if (resultSet.isEmpty()) {
+            System.out.println("No pairs found with sum equal to " + targetSum);
+        } else {
+            System.out.println("Pairs with sum equal to " + targetSum + ":");
+            for (int pair : resultSet) {
+                System.out.println("(" + pair + ", " + (targetSum - pair) + ")");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 3, 5, 6, -2, 4, 7, 8, 9};
+        int targetSum = 7;
+        findPairs(arr, targetSum);
+    }
+}
+
